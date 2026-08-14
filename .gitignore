@@ -1,3 +1,5 @@
 *.o
 *.pdf
 *.txt
+*prog
+*.exe
