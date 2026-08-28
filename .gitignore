@@ -1,0 +1,8 @@
+*.o
+*.pdf
+*.txt
+*prog
+*.exe
+*.vscode
+input
+output
