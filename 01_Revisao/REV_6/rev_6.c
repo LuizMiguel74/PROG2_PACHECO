@@ -18,7 +18,7 @@ limite = quantidade minima de funkos para entrar em promocao
 tFunko leFunko() {
     tFunko f;
 
-    scanf("%d %s\n", &f.limite, f.rotulo);
+    scanf("%d %s", &f.limite, f.rotulo);
 
     return f;
 }
@@ -39,8 +39,8 @@ ordenacao baseado na tabela ASCII
     char auxiliar;
     int qtdAuxiliar;
 
-    for(i = 0 ; i != '\0' ; i++) {
-        for(j = i + 1 ; j != '\0' ; j++) {
+    for(i = 0 ; f.rotulo[i] != '\0' ; i++) {
+        for(j = i + 1 ; f.rotulo[j] != '\0' ; j++) {
 
             if(verificaSePrimeiroEhMaior((int)f.rotulo[i], (int)f.rotulo[j])) {
                 auxiliar = f.rotulo[i];
@@ -66,7 +66,7 @@ verifica se ja tem este funko no vetor auxiliar
         return 0;
     }
 
-    for(i = 0 ; i != '\0' ; i++) {
+    for(i = 0 ; f.rotulo[i] != '\0' ; i++) {
         if(jaTemFunko(f.rotulo[i], a)) {
             return 1;
         }
@@ -83,28 +83,25 @@ tFunko encontraFunkosEmPromocao(tFunko f) {
     funkoAuxiliar.limite = f.limite;
     funkoAuxiliar.rotulo[0] = '\0';
 
-    for(i = 0 ; i != '\0' ; i++) {
+    for(i = 0 ; f.rotulo[i] != '\0' ; i++) {
         contagem = 0;
         
-        for(j = 0 ; j != '\0' ; j++) {
-            
-            if(!(jaTemFunkoAuxiliar(funkoAuxiliar, f.rotulo[i]))) {
-                if(jaTemFunko(f.rotulo[i], f.rotulo[j])) {
-                    contagem++;
-                }
-
-            } else {
-                break;
-            }
+        if((jaTemFunkoAuxiliar(funkoAuxiliar, f.rotulo[i]))) {
+            continue;
         }
 
-        if(contagem) {
-            if(contagem >= f.limite) {
-                funkoAuxiliar.rotulo[k] = f.rotulo[i];
-                funkoAuxiliar.quantidadeFunko[k] = f.quantidadeFunko[i]; 
-                funkoAuxiliar.rotulo[k + 1] = '\0';
-                k++;
-            }
+        for(j = 0 ; f.rotulo[j] != '\0' ; j++) {
+            
+            if(jaTemFunko(f.rotulo[i], f.rotulo[j])) {
+                contagem++;
+            } 
+        }
+
+        if(contagem >= f.limite) {
+            funkoAuxiliar.rotulo[k] = f.rotulo[i];
+            funkoAuxiliar.quantidadeFunko[k] = contagem; 
+            k++;
+            funkoAuxiliar.rotulo[k] = '\0';
         }
     }
     return funkoAuxiliar;
@@ -113,10 +110,14 @@ tFunko encontraFunkosEmPromocao(tFunko f) {
 void imprimeFunko(tFunko f) {
     int i;
 
-    for(i = 0 ; i != '\0' ; i++) {
-        printf("%c: %d\n", f.rotulo[i], f.quantidadeFunko[i]);
+    if(f.rotulo[0] == '\0') {
+        printf("NENHUM\n");
+    
+    } else {
+        for(i = 0 ; f.rotulo[i] != '\0' ; i++) {
+            printf("%c: %d\n", f.rotulo[i], f.quantidadeFunko[i]);
+        }
     }
-
 }
 
 int main() {
