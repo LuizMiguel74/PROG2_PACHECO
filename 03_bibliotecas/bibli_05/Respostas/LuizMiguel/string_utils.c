@@ -1,4 +1,3 @@
-#include <string.h>
 #include <ctype.h>
 #include "string_utils.h"
 
@@ -8,9 +7,12 @@
  * @return O tamanho da string.
  */
 int string_length(char *str) {
-    int t;
+    int t = 0;
+    int i;
 
-    t = strlen(str);
+    for(i = 0 ; str[i] != '\0' ; i++) {
+        t++;
+    }
 
     return t;
 }
@@ -21,7 +23,12 @@ int string_length(char *str) {
  * @param dest A string de destino.
  */
 void string_copy(char *src, char *dest) {
-    strcpy(dest, src);
+    int i;
+
+    for(i = 0 ; src[i] != '\0' ; i++) {
+        dest[i] = src[i];
+    }
+    dest[i + 1] = '\0';
 }
 
 /**
