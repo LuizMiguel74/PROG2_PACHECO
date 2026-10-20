@@ -1,0 +1,14 @@
+*.o
+*.txt
+*prog
+*.exe
+*.vscode
+input
+output
+Resultados
+saida.json
+Resultado.csv
+Casos
+Gabarito-obj
+Includes
+correcao.sh
