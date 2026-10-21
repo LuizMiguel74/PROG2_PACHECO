@@ -12,7 +12,11 @@
  */
 char *CriaVetor(int tamanho) {
     char *vetor = (char *) calloc (tamanho, sizeof(char));
-    
+
+    if(vetor == NULL) {
+        exit(1);
+    }
+
     for(int i = 0; i < tamanho ; i++) {
         vetor[i] = '_';
     }
