@@ -52,9 +52,10 @@ void ComecaJogo(tJogo* jogo) {
         if(VenceuJogador(jogo->jogador1, jogo->tabuleiro)) {
             printf("JOGADOR 1 Venceu!\n");
             printf("Jogar novamente? (s,n)\n");
+
             if(ContinuaJogo()) {
-                DestroiJogo(jogo);
-                jogo = CriaJogo();
+                DestroiTabuleiro(jogo->tabuleiro);
+                jogo->tabuleiro = CriaTabuleiro();
                 continue;
             } else {
                 break;
@@ -65,9 +66,10 @@ void ComecaJogo(tJogo* jogo) {
         if(AcabouJogo(jogo)) {
             printf("Sem vencedor!\n");
             printf("Jogar novamente? (s,n)\n");
+
             if(ContinuaJogo()) {
-                DestroiJogo(jogo);
-                jogo = CriaJogo();
+                 DestroiTabuleiro(jogo->tabuleiro);
+                jogo->tabuleiro = CriaTabuleiro();
                 continue;
             } else {
                 break;
@@ -82,9 +84,10 @@ void ComecaJogo(tJogo* jogo) {
         if(VenceuJogador(jogo->jogador2, jogo->tabuleiro)) {
             printf("JOGADOR 2 Venceu!\n");
             printf("Jogar novamente? (s,n)\n");
+
             if(ContinuaJogo()) {
-                DestroiJogo(jogo);
-                jogo = CriaJogo();
+                DestroiTabuleiro(jogo->tabuleiro);
+                jogo->tabuleiro = CriaTabuleiro();
                 continue;
             } else {
                 break;
@@ -94,15 +97,17 @@ void ComecaJogo(tJogo* jogo) {
         if(AcabouJogo(jogo)) {
             printf("Sem vencedor!\n");
             printf("Jogar novamente? (s,n)\n");
+            
             if(ContinuaJogo()) {
-                DestroiJogo(jogo);
-                jogo = CriaJogo();
+                DestroiTabuleiro(jogo->tabuleiro);
+                jogo->tabuleiro = CriaTabuleiro();
                 continue;
             } else {
                 break;
             }
         }
     }
+
 }
 
 
@@ -129,11 +134,16 @@ int AcabouJogo(tJogo* jogo) {
 int ContinuaJogo() {
     char escolha;
 
-    scanf("%c", &escolha);
+    while (scanf(" %c", &escolha) == 1) {
+        if (escolha == 's' || escolha == 'S') {
+            return 1;
+        }
 
-    if(escolha == 's' || escolha == 'S') {
-        return 1;
-    } 
+        if (escolha == 'n' || escolha == 'N') {
+            return 0;
+        }
+    }
+
     return 0;
 }
 

@@ -59,9 +59,11 @@ void JogaJogador(tJogador* jogador, tTabuleiro* tabuleiro) {
 
         LeJogada(jogada);
 
-        if (!FoiJogadaBemSucedida(jogada)) {
+        if (FoiJogadaBemSucedida(jogada) == 0) {
             printf("Jogada invalida!\n");
             continue;
+        } else if(FoiJogadaBemSucedida(jogada) == -1) {
+            exit(1);
         }
 
         x = ObtemJogadaX(jogada);

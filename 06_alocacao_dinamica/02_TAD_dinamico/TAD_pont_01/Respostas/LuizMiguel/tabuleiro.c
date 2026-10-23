@@ -25,14 +25,15 @@ typedef struct{
 tTabuleiro* CriaTabuleiro() {
     tTabuleiro *t = (tTabuleiro *) calloc (1, sizeof(tTabuleiro));
 
-    t->peca1 = 'X';
-    t->peca2 = '0';
-    t->pecaVazio = '-';
-
     if(t == NULL) {
         printf("ERRO\nAlocação");
         exit(1);
     }
+
+    t->peca1 = 'X';
+    t->peca2 = '0';
+    t->pecaVazio = '-';
+
 
     t->posicoes = (char **) calloc (TAM_TABULEIRO, sizeof(char *));
 
