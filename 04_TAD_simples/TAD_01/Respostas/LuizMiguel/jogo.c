@@ -123,7 +123,7 @@ int ContinuaJogo() {
     char l;
 
 
-    scanf("%c", &l);
+    scanf(" %c", &l);
 
     if(l == 's') {
         return 1;
