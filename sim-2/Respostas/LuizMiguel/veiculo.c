@@ -1,6 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
 #include "veiculo.h"
-
 
 #include "datahora.h"
 #include "proprietario.h"
@@ -21,10 +23,13 @@
 #define TOLERANCIA_MIN 15
 
 struct Veiculo {
-    
+    char *placa;
+    Proprietario *dono;
+    char categoria;
+    DataHora *entrada, *saida;
+    int estaNoPatio;
 };
 
-typedef struct Veiculo Veiculo;
 
 /**
  * @brief   Cria um veículo que acabou de entrar no estacionamento.
@@ -44,7 +49,21 @@ typedef struct Veiculo Veiculo;
  *          O chamador é dono do veículo e deve liberá-lo com liberaVeiculo() (ou
  *          transferir a posse ao Estacionamento).
  */
-Veiculo *criaVeiculo(char *placa, Proprietario *proprietario, char categoria, DataHora *entrada);
+Veiculo *criaVeiculo(char *placa, Proprietario *proprietario, char categoria, DataHora *entrada) {
+    Veiculo *v = (Veiculo *) calloc (1, sizeof(Veiculo));
+    v->placa = (char *) calloc (MAX_PLACA_VEIC, sizeof(char));
+    
+
+
+    strcpy(v->placa, placa);
+
+    v->categoria = categoria;
+    v->entrada = entrada;
+    v->dono = proprietario;
+    v->estaNoPatio = 1;
+
+    return v;
+}
 
 /**
  * @brief   Lê os dados de entrada de um veículo da entrada padrão e o cria.
@@ -59,7 +78,23 @@ Veiculo *criaVeiculo(char *placa, Proprietario *proprietario, char categoria, Da
  *
  * @return  Ponteiro para o Veiculo lido (mesmas regras de criaVeiculo()).
  */
-Veiculo *lerVeiculo();
+Veiculo *lerVeiculo() {
+    Veiculo *v;
+    char placa[MAX_PLACA_VEIC];
+    char categoria;
+
+    scanf("%7[^\n]\n", placa);
+
+    Proprietario *p = lerProprietario();
+
+    scanf("%c\n", &categoria);
+
+    DataHora *dh = lerDataHora();
+
+    v = criaVeiculo(placa, p, categoria, dh);
+
+    return v;
+}
 
 /**
  * @brief   Retorna a placa do veículo.
@@ -68,7 +103,9 @@ Veiculo *lerVeiculo();
  * @return  Ponteiro para a string INTERNA com a placa. O chamador pode apenas lê-la:
  *          não deve modificá-la nem liberá-la.
  */
-char *getPlacaVeiculo(Veiculo *v);
+char *getPlacaVeiculo(Veiculo *v) {
+    return v->placa;
+}
 
 /**
  * @brief   Informa se o veículo ainda está no pátio.
@@ -77,7 +114,9 @@ char *getPlacaVeiculo(Veiculo *v);
  * @return  1 se a saída do veículo AINDA NÃO foi registrada;
  *          0 se a saída já foi registrada.
  */
-int estaNoPatioVeiculo(Veiculo *v);
+int estaNoPatioVeiculo(Veiculo *v) {
+    return v->estaNoPatio;
+}
 
 /**
  * @brief   Registra a data/hora de saída do veículo.
@@ -92,7 +131,10 @@ int estaNoPatioVeiculo(Veiculo *v);
  *          deve garantir que a saída ainda não foi registrada).
  * @post    estaNoPatioVeiculo(v) passa a retornar 0.
  */
-void registraSaidaVeiculo(Veiculo *v, DataHora *saida);
+void registraSaidaVeiculo(Veiculo *v, DataHora *saida) {
+    v->saida = saida;
+    v->estaNoPatio = 0;
+}
 
 /**
  * @brief   Calcula o tempo de permanência do veículo, em minutos.
@@ -102,7 +144,16 @@ void registraSaidaVeiculo(Veiculo *v, DataHora *saida);
  *          diferencaMinutosDataHora()), se o veículo já saiu;
  *          0 se o veículo ainda está no pátio.
  */
-int calculaPermanenciaVeiculo(Veiculo *v);
+int calculaPermanenciaVeiculo(Veiculo *v) {
+    if(v->estaNoPatio) {
+        return 0;
+    }
+
+    int minutos = diferencaMinutosDataHora(v->entrada, v->saida);
+
+
+    return minutos;
+}
 
 /**
  * @brief   Calcula o valor cobrado do veículo na saída, em reais inteiros.
@@ -121,7 +172,32 @@ int calculaPermanenciaVeiculo(Veiculo *v);
  * @return  O valor calculado conforme as regras acima, se o veículo já saiu;
  *          0 se o veículo ainda está no pátio (nada a cobrar ainda).
  */
-int calculaTarifaVeiculo(Veiculo *v);
+int calculaTarifaVeiculo(Veiculo *v) {
+    int minutos = 0;
+    int cobranca = 0;
+
+    if(v->estaNoPatio) {
+        return 0;
+    }
+
+    minutos = calculaPermanenciaVeiculo(v);
+
+    if(minutos <= TOLERANCIA_MIN) {
+        return 0;
+    }
+
+    if(v->categoria == CATEGORIA_CARRO) {
+        cobranca = ceil(minutos / 60.0) * TARIFA_CARRO;
+
+    } else if(v->categoria == CATEGORIA_MOTO) {
+        cobranca = ceil(minutos / 60.0) * TARIFA_MOTO;
+    
+    } else if(v->categoria == CATEGORIA_UTILITARIO) {
+        cobranca = ceil(minutos / 60.0) * TARIFA_UTILITARIO;
+    }
+
+    return cobranca;
+}
 
 /**
  * @brief   Imprime uma linha com os dados do veículo na saída padrão.
@@ -134,7 +210,12 @@ int calculaTarifaVeiculo(Veiculo *v);
  *
  * @param v  [entrada]  Veículo a imprimir (não-nulo).
  */
-void imprimeVeiculo(Veiculo *v);
+void imprimeVeiculo(Veiculo *v) {
+    printf("\n- %s - ", v->placa);
+    imprimeProprietario(v->dono);
+    printf(" - ");
+    imprimeDataHora(v->entrada);
+}
 
 /**
  * @brief   Libera toda a memória associada ao veículo.
@@ -145,6 +226,13 @@ void imprimeVeiculo(Veiculo *v);
  * @param v  [entrada]  Veículo a liberar.
  * @post    v e os objetos que ele possuía não devem mais ser usados.
  */
-void liberaVeiculo(Veiculo *v);
+void liberaVeiculo(Veiculo *v) {
+    liberaDataHora(v->entrada);
+    liberaDataHora(v->saida);
+    liberaProprietario(v->dono);
+
+    free(v->placa);
+    free(v);
+}
 
 

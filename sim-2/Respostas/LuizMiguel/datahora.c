@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "datahora.h"
 
 
@@ -31,13 +32,12 @@ DataHora *criaDataHora(int dia, int mes, int ano, int hora, int minuto) {
         printf("ERRO\nalocacao (dataHora)");
     }
 
-    if(verificaDataValida(dia, mes, ano)) {
         dt->dia = dia;
         dt->mes = mes;
         dt->ano = ano;
         dt->hora = hora;
         dt->minuto = minuto;
-    }
+   
     
     return dt;
 }
@@ -91,27 +91,15 @@ DataHora *lerDataHora() {
  */
 int diferencaMinutosDataHora(DataHora *inicio, DataHora *fim) {
     int diferencaTotalMinutos = 0;
-    int diferencaHoras = 0;
     int diferencaDias = 0;
 
    diferencaDias = diferencaTotalDias(inicio, fim);
 
-   diferencaTotalMinutos += diferencaDias * 1440;
+   diferencaTotalMinutos = (diferencaDias * 1440) + ((fim->hora * 60) + fim->minuto) -
+   ((inicio->hora * 60) + inicio->minuto);
    
-   if(inicio->hora < fim->hora) {
-        diferencaTotalMinutos += (fim->hora - inicio->hora) * 60;
+   diferencaTotalMinutos = abs(diferencaTotalMinutos);
 
-        if(inicio->minuto < fim->minuto) {
-            diferencaTotalMinutos += fim->minuto - inicio->minuto;
-        }
-
-    } else {
-        diferencaTotalMinutos += (inicio->hora - fim->hora) * 60;
-        
-        if(fim->minuto < inicio->minuto) {
-            diferencaTotalMinutos -= inicio->minuto - fim->minuto;
-        }
-    }
 
     return diferencaTotalMinutos;
 
@@ -144,22 +132,14 @@ void liberaDataHora(DataHora *dh) {
 
 
 int verificaDataValida(int dia, int mes, int ano) {
-    int ehBissexto = 0;
-    
-    ehBissexto = verificaAnoBissexto(ano);
+    int diasMes;
     
     if(ano > 0) {
-        if(ehBissexto) {
-            if(mes == 2) {
-                if(dia > 0 && dia < 30) {
-                    return 1;
-                }
-            }
-        } else {
-            if(mes > 0 && mes < 13) {
-                if(dia > 0 && dia < 32) {
-                    return 1;
-                }
+        if(mes > 0 && mes < 13) {
+            diasMes = quantosDiasNoMes(mes, ano);
+            
+            if(dia > 0 && dia <= diasMes) {
+                return 1;
             }
         }
     }
@@ -189,8 +169,20 @@ int quantosDiasNoMes(int mes, int ano) {
     return 30;
 }
 
+int primeiraDataEhMenor(DataHora *dt1, DataHora *dt2) {
+    if(dt1->ano < dt2->ano) {
+        return 1;
+    }
+    if(dt1->mes < dt2->mes) {
+        return 1;
+    }
+    if(dt1->dia < dt2->dia) {
+        return 1;
+    }
+    return 0;
+}
+
 int diferencaTotalDias(DataHora *dt1, DataHora *dt2) {
-    int diasDoMes;
     DataHora *aux = (DataHora *) calloc (1, sizeof(DataHora));
     
     aux->ano = dt1->ano;
@@ -199,37 +191,28 @@ int diferencaTotalDias(DataHora *dt1, DataHora *dt2) {
 
     int totalDiferencaDias = 0;
 
-    if(aux->dia > dt2->dia) {
-        totalDiferencaDias = aux->dia - dt2->dia;
-    } else {
-        totalDiferencaDias = dt2->dia - aux->dia;
-    }
-
     while(1) {
-        diasDoMes = quantosDiasNoMes(aux->mes, aux->ano);
-        
-        if(aux->ano == dt2->ano && aux->dia == dt2->dia && aux->mes == dt2->mes) {
-            break;
-        } 
+        if(primeiraDataEhMenor(aux, dt2)) {
+            totalDiferencaDias += 1;
 
-        if(aux->ano <= dt2->ano) {
-            if(aux->mes <= dt2->mes) {
-                totalDiferencaDias += diasDoMes;
+            if(verificaDataValida(aux->dia + 1, aux->mes, aux->ano)) {
+                aux->dia += 1;
+            } else {
+                aux->dia = 1;
                 
-                if(aux->mes + 1 > 12) {
-                    aux->ano += 1;
-                    aux->mes = 1;
-                } else {
+                if(verificaDataValida(aux->dia, aux->mes + 1, aux->ano)) {
+                    aux->dia = 1;
                     aux->mes += 1;
+                } else {
+                    aux->mes = 1;
+                    aux->ano += 1;
                 }
-
-            } else if(aux->ano < dt2->ano) {
-                totalDiferencaDias += diasDoMes;
-                aux->mes += 1;
             }
+        } else {
+            break;
         }
-        
     }
 
+    liberaDataHora(aux);
     return totalDiferencaDias;
 }
