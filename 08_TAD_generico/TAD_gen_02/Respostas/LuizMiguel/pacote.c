@@ -68,7 +68,7 @@ void LePacote(tPacote* pac) {
         if(pac->qtd > 0) {
             scanf(" %c", &((char *) pac->vetor)[0]);
             
-            for(int i = 0 ; i < pac->qtd ; i++) {
+            for(int i = 1 ; i < pac->qtd ; i++) {
                scanf("%c", &((char *) pac->vetor)[i]);
             }
         }
@@ -94,14 +94,21 @@ void LePacote(tPacote* pac) {
  * @param pac - O vetor genérico que terá seu conteúdo impresso em tela
  */
 void ImprimePacote(tPacote* pac) {
+    CalculaSomaVerificacaoPacote(pac);
+    
+    printf("%d ", pac->soma);
+
     if(pac->tipo == INT) {
         for(int i = 0 ; i < pac->qtd ; i++) {
-            printf("%d ", ((int *)pac->vetor) [i]);
+            printf("%d", ((int *)pac->vetor) [i]);
+            if(i != pac->qtd - 1) {
+                printf(" ");
+            }
         }
 
     } else if(pac->tipo == CHAR) {
-        for(int i = 0 ; i < pac->qtd ; i++) {
-            printf("%c ", ((char *)pac->vetor) [i]);
+       for(int i = 0 ; i < pac->qtd ; i++) {
+            printf("%c", ((char *)pac->vetor) [i]);
         }
     }
 }
