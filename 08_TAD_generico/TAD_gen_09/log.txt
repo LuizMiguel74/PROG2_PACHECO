@@ -1,0 +1,289 @@
+- Arquivo de configuração encontrado!
+ - Arquivos header necessários do professor existem na pasta Includes
+ - Arquivos objetos necessários do professor existem na pasta Gabarito-obj.
+
+#######################################
+ALUNO: LuizMiguel
+#######################################
+
+CRIANDO O DIRETÓRIO DE RESULTADO PARA LuizMiguel:
+ - Diretório Resultados/LuizMiguel criado com sucesso!
+ - Diretório Resultados/LuizMiguel/main criado com sucesso!
+ - Diretório Resultados/LuizMiguel/completo criado com sucesso!
+ - Diretório Resultados/LuizMiguel/documento criado com sucesso!
+ - Diretório Resultados/LuizMiguel/fila_imp criado com sucesso!
+ - Diretório Resultados/LuizMiguel/receita criado com sucesso!
+ - Arquivos criados: ok!
+
+CHECKANDO OS ARQUIVOS DO ALUNO:
+ - Arquivo esperado 'Respostas/LuizMiguel/documento.c' encontrado!
+ - Arquivo esperado 'Respostas/LuizMiguel/documento.h' encontrado!
+ - Arquivo esperado 'Respostas/LuizMiguel/fila_imp.c' encontrado!
+ - Arquivo esperado 'Respostas/LuizMiguel/fila_imp.h' encontrado!
+ - Arquivo esperado 'Respostas/LuizMiguel/main.c' não encontrado!
+ - Arquivo esperado 'Respostas/LuizMiguel/receita.c' encontrado!
+ - Arquivo esperado 'Respostas/LuizMiguel/receita.h' encontrado!
+ - Arquivos esperados enviados: Faltando!
+
+COPIANDO OS ARQUIVOS PARA A PASTA DE RESULTADO DO ALUNO:
+ - Pasta main:
+ - Copiando os Casos de teste para a pasta Resultados/LuizMiguel/main
+ - Copiando os Includes/documento.h Includes/fila_imp.h Includes/receita.h do professor para a pasta Resultados/LuizMiguel/main
+ - Copiando os Includes/*.o do professor para a pasta Resultados/LuizMiguel/main
+ - Removendo o main.o do professor da pasta Resultados/LuizMiguel/main
+ - Copiando o Respostas/LuizMiguel/main.c do aluno para a pasta Resultados/LuizMiguel/main
+ - Pasta completo:
+ - Copiando os Casos de teste para a pasta Resultados/LuizMiguel/completo
+ - Copiando os Respostas/LuizMiguel/documento.c do aluno para a pasta Resultados/LuizMiguel/completo
+ - Copiando os Respostas/LuizMiguel/documento.h do aluno para a pasta Resultados/LuizMiguel/completo
+ - Copiando os Respostas/LuizMiguel/fila_imp.c do aluno para a pasta Resultados/LuizMiguel/completo
+ - Copiando os Respostas/LuizMiguel/fila_imp.h do aluno para a pasta Resultados/LuizMiguel/completo
+ - Copiando os Respostas/LuizMiguel/main.c do aluno para a pasta Resultados/LuizMiguel/completo
+ - Copiando os Respostas/LuizMiguel/receita.c do aluno para a pasta Resultados/LuizMiguel/completo
+ - Copiando os Respostas/LuizMiguel/receita.h do aluno para a pasta Resultados/LuizMiguel/completo
+ - Pasta documento:
+ - Copiando os Casos de teste para a pasta Resultados/LuizMiguel/documento
+ - Copiando os Includes/documento.h Includes/fila_imp.h Includes/receita.h do professor para a pasta Resultados/LuizMiguel/documento
+ - Copiando os Includes/*.o do professor para a pasta Resultados/LuizMiguel/documento
+ - Removendo o documento.o do professor da pasta Resultados/LuizMiguel/documento
+ - Copiando o Respostas/LuizMiguel/documento.c do aluno para a pasta Resultados/LuizMiguel/documento
+ - Pasta fila_imp:
+ - Copiando os Casos de teste para a pasta Resultados/LuizMiguel/fila_imp
+ - Copiando os Includes/documento.h Includes/fila_imp.h Includes/receita.h do professor para a pasta Resultados/LuizMiguel/fila_imp
+ - Copiando os Includes/*.o do professor para a pasta Resultados/LuizMiguel/fila_imp
+ - Removendo o fila_imp.o do professor da pasta Resultados/LuizMiguel/fila_imp
+ - Copiando o Respostas/LuizMiguel/fila_imp.c do aluno para a pasta Resultados/LuizMiguel/fila_imp
+ - Pasta receita:
+ - Copiando os Casos de teste para a pasta Resultados/LuizMiguel/receita
+ - Copiando os Includes/documento.h Includes/fila_imp.h Includes/receita.h do professor para a pasta Resultados/LuizMiguel/receita
+ - Copiando os Includes/*.o do professor para a pasta Resultados/LuizMiguel/receita
+ - Removendo o receita.o do professor da pasta Resultados/LuizMiguel/receita
+ - Copiando o Respostas/LuizMiguel/receita.c do aluno para a pasta Resultados/LuizMiguel/receita
+ - Copiando Arquivos Extras do Aluno:
+ - Arquivos copiados: ok!
+
+COMPILANDO OS ARQUIVOS NA PASTA DE RESULTADO DO ALUNO:
+ - Erro de compilação! Verifique os arquivos da pasta main.
+ - Compilação dos arquivos do aluno na pasta completo ok!
+ - Arquivo de output gerado: Resultados/LuizMiguel/completo/result_compilation.txt
+ - Compilação dos arquivos do aluno na pasta documento ok!
+ - Arquivo de output gerado: Resultados/LuizMiguel/documento/result_compilation.txt
+ - Compilação dos arquivos do aluno na pasta fila_imp ok!
+ - Arquivo de output gerado: Resultados/LuizMiguel/fila_imp/result_compilation.txt
+ - Compilação dos arquivos do aluno na pasta receita ok!
+ - Arquivo de output gerado: Resultados/LuizMiguel/receita/result_compilation.txt
+ - Arquivos Compilados: Erro!: 1 arquivos com erros de compilacao.
+
+ - Arquivos Compilados: ok!
+
+LINKANDO OS ARQUIVOS COMPILADOS:
+ - Pasta main:
+ - Gerando o binário prog linkando com o(s) arquivo(s) main/*.o
+ - Arquivos Linkados: Erro! Binário prog não gerado.
+ - Arquivo de output gerado: Resultados/LuizMiguel/main/result_linking.txt
+ - Pasta completo:
+ - Gerando o binário prog linkando com o(s) arquivo(s) completo/*.o
+ - Arquivos Linkados: Erro! Binário prog não gerado.
+ - Arquivo de output gerado: Resultados/LuizMiguel/completo/result_linking.txt
+ - Pasta documento:
+ - Gerando o binário prog linkando com o(s) arquivo(s) documento/*.o
+ - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
+ - Arquivo de output gerado: Resultados/LuizMiguel/documento/result_linking.txt
+ - Pasta fila_imp:
+ - Gerando o binário prog linkando com o(s) arquivo(s) fila_imp/*.o
+ - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
+ - Arquivo de output gerado: Resultados/LuizMiguel/fila_imp/result_linking.txt
+ - Pasta receita:
+ - Gerando o binário prog linkando com o(s) arquivo(s) receita/*.o
+ - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
+ - Arquivo de output gerado: Resultados/LuizMiguel/receita/result_linking.txt
+ - Arquivos Linkados: Erro! 2 arquivos com erros de linkagem.
+
+EXECUTANDO O VALGRIND EM CADA CASO:
+ - Pasta main / Caso 1:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - Resultado para o saida.txt: Incorreto! Peso: 0.0
+ - Nota para o Caso (soma dos pesos): 0 (soma total) - 40.0% (desconto do valgrind) = 0 de 10 pontos.
+ - Pasta main / Caso 2:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - Resultado para o saida.txt: Incorreto! Peso: 0.0
+ - Nota para o Caso (soma dos pesos): 0 (soma total) - 40.0% (desconto do valgrind) = 0 de 10 pontos.
+ - Pasta main / Caso 3:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - Resultado para o saida.txt: Incorreto! Peso: 0.0
+ - Nota para o Caso (soma dos pesos): 0 (soma total) - 40.0% (desconto do valgrind) = 0 de 10 pontos.
+ - Pasta main / Caso 4:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - Resultado para o saida.txt: Incorreto! Peso: 0.0
+ - Nota para o Caso (soma dos pesos): 0 (soma total) - 40.0% (desconto do valgrind) = 0 de 10 pontos.
+ - Pasta main / Caso 5:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - Resultado para o saida.txt: Incorreto! Peso: 0.0
+ - Nota para o Caso (soma dos pesos): 0 (soma total) - 40.0% (desconto do valgrind) = 0 de 10 pontos.
+ - Pasta main / Caso 6:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - Resultado para o saida.txt: Incorreto! Peso: 0.0
+ - Nota para o Caso (soma dos pesos): 0 (soma total) - 40.0% (desconto do valgrind) = 0 de 10 pontos.
+ - Nota para a pasta main (máximo 2.00) - 0 de 60 - 0% de 2.00: 0.
+ -----
+ - Pasta completo / Caso 1:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - Resultado para o saida.txt: Incorreto! Peso: 0.0
+ - Nota para o Caso (soma dos pesos): 0 (soma total) - 40.0% (desconto do valgrind) = 0 de 10 pontos.
+ - Pasta completo / Caso 2:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - Resultado para o saida.txt: Incorreto! Peso: 0.0
+ - Nota para o Caso (soma dos pesos): 0 (soma total) - 40.0% (desconto do valgrind) = 0 de 10 pontos.
+ - Pasta completo / Caso 3:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - Resultado para o saida.txt: Incorreto! Peso: 0.0
+ - Nota para o Caso (soma dos pesos): 0 (soma total) - 40.0% (desconto do valgrind) = 0 de 10 pontos.
+ - Pasta completo / Caso 4:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - Resultado para o saida.txt: Incorreto! Peso: 0.0
+ - Nota para o Caso (soma dos pesos): 0 (soma total) - 40.0% (desconto do valgrind) = 0 de 10 pontos.
+ - Pasta completo / Caso 5:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - Resultado para o saida.txt: Incorreto! Peso: 0.0
+ - Nota para o Caso (soma dos pesos): 0 (soma total) - 40.0% (desconto do valgrind) = 0 de 10 pontos.
+ - Pasta completo / Caso 6:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - Resultado para o saida.txt: Incorreto! Peso: 0.0
+ - Nota para o Caso (soma dos pesos): 0 (soma total) - 40.0% (desconto do valgrind) = 0 de 10 pontos.
+ - Nota para a pasta completo (máximo 3.00) - 0 de 60 - 0% de 3.00: 0.
+ -----
+ - Pasta documento / Caso 1:
+ - Arquivo de output gerado: Resultados/LuizMiguel/documento/Casos/1/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 18, frees: 18, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta documento / Caso 2:
+ - Arquivo de output gerado: Resultados/LuizMiguel/documento/Casos/2/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 18, frees: 18, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta documento / Caso 3:
+ - Arquivo de output gerado: Resultados/LuizMiguel/documento/Casos/3/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 21, frees: 21, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta documento / Caso 4:
+ - Arquivo de output gerado: Resultados/LuizMiguel/documento/Casos/4/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 15, frees: 15, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta documento / Caso 5:
+ - Arquivo de output gerado: Resultados/LuizMiguel/documento/Casos/5/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 15, frees: 15, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta documento / Caso 6:
+ - Arquivo de output gerado: Resultados/LuizMiguel/documento/Casos/6/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 183, frees: 183, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Nota para a pasta documento (máximo 2.00) - 60.00 de 60 - 100.00% de 2.00: 2.00.
+ -----
+ - Pasta fila_imp / Caso 1:
+ - Arquivo de output gerado: Resultados/LuizMiguel/fila_imp/Casos/1/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 18, frees: 18, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta fila_imp / Caso 2:
+ - Arquivo de output gerado: Resultados/LuizMiguel/fila_imp/Casos/2/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 18, frees: 18, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta fila_imp / Caso 3:
+ - Arquivo de output gerado: Resultados/LuizMiguel/fila_imp/Casos/3/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 21, frees: 21, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta fila_imp / Caso 4:
+ - Arquivo de output gerado: Resultados/LuizMiguel/fila_imp/Casos/4/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 15, frees: 15, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta fila_imp / Caso 5:
+ - Arquivo de output gerado: Resultados/LuizMiguel/fila_imp/Casos/5/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 15, frees: 15, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta fila_imp / Caso 6:
+ - Arquivo de output gerado: Resultados/LuizMiguel/fila_imp/Casos/6/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 183, frees: 183, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Nota para a pasta fila_imp (máximo 2.00) - 60.00 de 60 - 100.00% de 2.00: 2.00.
+ -----
+ - Pasta receita / Caso 1:
+ - Arquivo de output gerado: Resultados/LuizMiguel/receita/Casos/1/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 38, frees: 38, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta receita / Caso 2:
+ - Arquivo de output gerado: Resultados/LuizMiguel/receita/Casos/2/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 38, frees: 38, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta receita / Caso 3:
+ - Arquivo de output gerado: Resultados/LuizMiguel/receita/Casos/3/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 33, frees: 33, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta receita / Caso 4:
+ - Arquivo de output gerado: Resultados/LuizMiguel/receita/Casos/4/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 23, frees: 23, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta receita / Caso 5:
+ - Arquivo de output gerado: Resultados/LuizMiguel/receita/Casos/5/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 23, frees: 23, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta receita / Caso 6:
+ - Arquivo de output gerado: Resultados/LuizMiguel/receita/Casos/6/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 263, frees: 263, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Nota para a pasta receita (máximo 1.00) - 60.00 de 60 - 100.00% de 1.00: 1.00.
+ -----
+
+#######################################
+RESULTADOS FINAIS
+#######################################
+
+----------------------------------------------------------------------------
+Aluno: LuizMiguel
+ - Arquivos Esperados Corretos: 6 de 7
+ - Pastas Compiladas Corretamente: 4 de 5 
+ - Pastas Linkadas Corretamente: 3 de 5
+ - Teste main
+ - Resultados corretos: 0 de 6
+ - Valgrinds corretos: 0 de 6
+ - Nota de LuizMiguel para o teste main: 0
+ - Teste completo
+ - Resultados corretos: 0 de 6
+ - Valgrinds corretos: 0 de 6
+ - Nota de LuizMiguel para o teste completo: 0
+ - Teste documento
+ - Resultados corretos: 6 de 6
+ - Valgrinds corretos: 6 de 6
+ - Nota de LuizMiguel para o teste documento: 2.00
+ - Teste fila_imp
+ - Resultados corretos: 6 de 6
+ - Valgrinds corretos: 6 de 6
+ - Nota de LuizMiguel para o teste fila_imp: 2.00
+ - Teste receita
+ - Resultados corretos: 6 de 6
+ - Valgrinds corretos: 6 de 6
+ - Nota de LuizMiguel para o teste receita: 1.00
+ - Nota de LuizMiguel: 0+(1.00)+(2.00)+(0)+(2.00)+(0)
+ - Nota de LuizMiguel: 5.00
+
+----------------------------------------------------------------------------
+
+Arquivo CSV Resultado.csv com os resultados finais foi gerado na pasta raíz!
+
+
+
